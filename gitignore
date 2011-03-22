@@ -1,0 +1,14 @@
+.DS_Store
+weather.png
+weatherdata.txt
+*.swp
+*.swo
+Thumbs.db
+*.pyc
+.livereload
+env/
+
+*.egg-info
+dist/
+
+.venv
