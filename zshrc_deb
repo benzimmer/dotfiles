@@ -21,3 +21,9 @@ plugins=(git rails ruby pip brew bundler gem github rails3 deb)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+PATH="/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:${HOME}.gem/ruby/1.8/bin:$PATH"
+EDITOR='mvim'
+export BROWSER='w3m'
+
+export GEM_HOME=${HOME}/.gem/ruby/1.8
+export GEM_PATH=${HOME}/.gem/ruby/1.8
