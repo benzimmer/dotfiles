@@ -18,7 +18,11 @@ install-zsh:
 ifeq ($(UNAME),Linux)
 
 ifeq ($(LSB),Ubuntu)
-	ln -s $(PWD)/zshrc_ubuntu ~/.zshrc
+	ln -s $(PWD)/zshrc_deb ~/.zshrc
+endif
+
+ifeq ($(LSB),Debian)
+	ln -s $(PWD)/zshrc_deb ~/.zshrc
 endif
 
 endif
