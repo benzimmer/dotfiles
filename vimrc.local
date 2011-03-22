@@ -1,0 +1,48 @@
+let mapleader = ","
+" use arrows to switch buffers
+nmap <silent> <c-up> :bn<CR>
+nmap <silent> <c-down> :bp<CR>
+
+" use arrow to switch windows
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
+" better movement in wrapped lines
+map j gj
+map k gk
+
+" clear search highlighting
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" write with sudo
+cmap w!! W !sudo tee % >/dev/null
+
+" delete buffer, keep split-window
+map ,d :b#<bar>bd#<CR>
+
+nnoremap <silent> <leader>y :YRShow<CR>
+
+set nobackup
+
+set wrap
+
+let g:ctags_path="/usr/local/bin/ctags"
+
+" python support
+" --------------
+"  don't highlight exceptions and builtins. I love to override them in local
+"  scopes and it sucks ass if it's highlighted then. And for exceptions I
+"  don't really want to have different colors for my own exceptions ;-)
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+\ formatoptions+=croq softtabstop=4 smartindent
+\ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+let python_highlight_all=1
+let python_highlight_exceptions=0
+let python_highlight_builtins=0
+autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+
+" html support
+au Filetype html,xml,xsl source ~/.vim/plugin/closetag.vim
+let g:closetag_html_style=1
