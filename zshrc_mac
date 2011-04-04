@@ -34,3 +34,11 @@ VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
 alias git='hub'
 alias astra='ssh -N -f support; ssh -N -f astra'
+alias e='mvim'
+alias h='hostname'
+alias rd='rm -r'
+
+hash -d dl=~/Downloads
+
+hash -d ff=~/Dropbox/firefly-it
+hash -d ip=~/Documents/Projekte
