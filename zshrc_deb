@@ -27,3 +27,9 @@ export BROWSER='w3m'
 
 export GEM_HOME=${HOME}/.gem/ruby/1.8
 export GEM_PATH=${HOME}/.gem/ruby/1.8
+
+alias e='vim'
+alias h='hostname'
+alias rd='rm -r'
+
+hash -d dl=~/Downloads
