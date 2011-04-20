@@ -21,7 +21,7 @@ plugins=(git rails ruby pip brew bundler gem github osx rails3)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-PATH="/usr/local/bin:/usr/local/sbin/:/usr/local/Cellar/python/2.7.1/bin:/bin:/sbin:/usr/bin:/usr/sbin:${HOME}/.gem/ruby/1.8/bin:$PATH"
+PATH="/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/python:${HOME}/.gem/ruby/1.8/bin:$PATH"
 EDITOR='mvim'
 export BROWSER='/Applications/Chromium.app'
 
@@ -29,7 +29,7 @@ export GEM_HOME=${HOME}/.gem/ruby/1.8
 export GEM_PATH=${HOME}/.gem/ruby/1.8
 
 export WORKON_HOME=$HOME/.envs
-source /usr/local/Cellar/python/2.7.1/bin/virtualenvwrapper.sh
+source /usr/local/share/python/virtualenvwrapper.sh
 VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
 alias git='hub'
@@ -37,6 +37,8 @@ alias astra='ssh -N -f support; ssh -N -f astra'
 alias e='mvim'
 alias h='hostname'
 alias rd='rm -r'
+alias glr='git pull --rebase'
+alias gx='gitx'
 
 hash -d dl=~/Downloads
 
