@@ -46,3 +46,19 @@ autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 s
 " html support
 au Filetype html,xml,xsl source ~/.vim/plugin/closetag.vim
 let g:closetag_html_style=1
+
+" epub support
+au BufReadCmd *.epub call zip#Browse(expand("<amatch>"))
+
+function! RSpec(command)
+  " TODO: handle args such as --tag focus here, or make a separate command for it
+  if a:command == ''
+    let dir = 'spec'
+  else
+    let dir = a:command
+  endif
+  cexpr system("rspec -r ~/.rspecformatters/vim_formatter -f RSpec::Core::Formatters::VimFormatter " . dir)
+  cw
+endfunction
+command! -nargs=? -complete=file Spec call RSpec(<q-args>)
+map <leader>s :Spec<space>
