@@ -38,9 +38,11 @@ alias e='mvim'
 alias h='hostname'
 alias rd='rm -r'
 alias glr='git pull --rebase'
+alias gs='git stash'
+alias gsl='git stash list'
+alias gsp='git stash pop'
 alias gx='gitx'
 
 hash -d dl=~/Downloads
-
 hash -d ff=~/Dropbox/firefly-it
 hash -d ip=~/Documents/Projekte
