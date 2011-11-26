@@ -20,10 +20,11 @@ plugins=(git rails ruby pip brew bundler gem github osx rails3)
 
 source $ZSH/oh-my-zsh.sh
 
+
 # Customize to your needs...
 PATH="/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/python:${HOME}/.gem/ruby/1.8/bin:$PATH"
-EDITOR='mvim'
-export BROWSER='/Applications/Chromium.app'
+export EDITOR='mvim'
+export BROWSER='/Applications/Google\ Chrome.app'
 
 export GEM_HOME=${HOME}/.gem/ruby/1.8
 export GEM_PATH=${HOME}/.gem/ruby/1.8
@@ -32,9 +33,17 @@ export WORKON_HOME=$HOME/.envs
 source /usr/local/share/python/virtualenvwrapper.sh
 VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 
+PYTHONPATH="/usr/local/share/python:/usr/local/lib/python2.7:$PYTHONPATH"
+export PYTHONPATH
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+[[ -s "/Users/bzimmer/.rvm/scripts/rvm" ]] && source "/Users/bzimmer/.rvm/scripts/rvm"
+
 alias git='hub'
-alias astra='ssh -N -f support; ssh -N -f astra'
+#alias e='open -a MacVim -g $opts ${1:+"$@"}'
 alias e='mvim'
+alias vim="/usr/local/Cellar/macvim/7.3-63/MacVim.app/Contents/MacOS/Vim"
 alias h='hostname'
 alias rd='rm -r'
 alias glr='git pull --rebase'
@@ -43,6 +52,29 @@ alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gx='gitx'
 
+alias us='cat ~/.ssh/conf.d/* > ~/.ssh/config'
 hash -d dl=~/Downloads
 hash -d ff=~/Dropbox/firefly-it
 hash -d ip=~/Documents/Projekte
+
+alias weg='killall ssh'
+## infopark aliases
+alias support='ssh support'
+alias support_fw='ssh -N -f support'
+alias nedry='ssh -N -f shellfw; ssh nedry'
+alias ses='ssh -N -f shellfw; ssh -N -f dbfw; ssh -N -f nedry; ssh -N -f da'
+alias b2c_shell_c='ssh -N -f shellfw; ssh cms@dc'
+alias b2c_shell_r='ssh -N -f shellfw; ssh dc'
+
+alias one="cd ~ip/ses-one"
+alias two="ses"
+alias three="rs"
+
+function jump {
+  local si="$IFS";
+  IFS=$'\n';
+  local newDir=$(JUMPPROFILE=1 command jump "$@");
+  cd "$newDir";
+  IFS="$si";
+}
+alias j="jump -a"
