@@ -1,0 +1,14 @@
+*keys.txt*  VIM keymappings
+
+<Leader>a
+        Ack for word under cursor
+<Leader>s
+        Replace word under cursor
+<Leader>d
+        Close current buffer
+<Leader>ig
+        Toggle indentation coloring
+<Leader>m
+        Toggle MiniBufExplorer
+<Leader>n
+        Toggle NERDExplorer
