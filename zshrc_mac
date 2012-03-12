@@ -70,6 +70,12 @@ alias one="cd ~ip/ses-one"
 alias two="ses"
 alias three="rs"
 
+alias be="bundle exec"
+alias bi="bundle install"
+alias bl="bundle list"
+alias bp="bundle package"
+alias bu="bundle update"
+
 function jump {
   local si="$IFS";
   IFS=$'\n';
