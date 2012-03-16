@@ -16,7 +16,7 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler gem git github osx pip python rails rails3 ruby vundle)
+plugins=(brew rvm gem git github osx pip python rails rails3 ruby vundle)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,7 +38,7 @@ export PYTHONPATH
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-[[ -s "/Users/bzimmer/.rvm/scripts/rvm" ]] && source "/Users/bzimmer/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 alias git='hub'
 alias e='vim'
