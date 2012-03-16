@@ -23,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 PATH="/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/python:${HOME}/.gem/ruby/1.8/bin:$PATH"
-export EDITOR='mvim'
+export EDITOR='vim'
 export BROWSER='/Applications/Google\ Chrome.app'
 
 export GEM_HOME=${HOME}/.gem/ruby/1.8
@@ -41,9 +41,7 @@ export PYTHONPATH
 [[ -s "/Users/bzimmer/.rvm/scripts/rvm" ]] && source "/Users/bzimmer/.rvm/scripts/rvm"
 
 alias git='hub'
-#alias e='open -a MacVim -g $opts ${1:+"$@"}'
-alias e='mvim'
-alias vim="/usr/local/Cellar/macvim/7.3-63/MacVim.app/Contents/MacOS/Vim"
+alias e='vim'
 alias h='hostname'
 alias rd='rm -r'
 alias glr='git pull --rebase'
