@@ -20,28 +20,33 @@ plugins=(brew rvm gem git github osx pip python rails rails3 ruby vundle)
 
 source $ZSH/oh-my-zsh.sh
 
-
 # Customize to your needs...
-PATH="/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/share/python:${HOME}/.gem/ruby/1.8/bin:$PATH"
+PATH="/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:${HOME}/.gem/ruby/1.8/bin:$PATH"
 export EDITOR='vim'
-export BROWSER='/Applications/Google\ Chrome.app'
+unset BROWSER
 
 export GEM_HOME=${HOME}/.gem/ruby/1.8
 export GEM_PATH=${HOME}/.gem/ruby/1.8
 
-export WORKON_HOME=$HOME/.envs
+#PYTHONPATH="/usr/local/share/python:/usr/local/lib/python2.7:$PYTHONPATH"
+#export PYTHONPATH
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Dropbox/firefly-it/Projekte
 source /usr/local/share/python/virtualenvwrapper.sh
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 
-PYTHONPATH="/usr/local/share/python:/usr/local/lib/python2.7:$PYTHONPATH"
-export PYTHONPATH
-
+#[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 alias git='hub'
 alias e='vim'
+alias es='tmux split-window -v "vim $1"'
+alias ev='tmux split-window -h "vim $1"'
+alias t='tmux'
+alias ta='tmux attach -t'
+alias tls='tmux ls'
 alias h='hostname'
 alias rd='rm -r'
 alias glr='git pull --rebase'
@@ -49,10 +54,12 @@ alias gs='git stash'
 alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gx='gitx'
+alias tx='tmuxinator'
 
 alias us='cat ~/.ssh/conf.d/* > ~/.ssh/config'
 hash -d dl=~/Downloads
 hash -d ff=~/Dropbox/firefly-it
+hash -d pro=~/Dropbox/Projekte
 hash -d ip=~/Documents/Projekte
 
 alias weg='killall ssh'
@@ -63,10 +70,6 @@ alias nedry='ssh -N -f shellfw; ssh nedry'
 alias ses='ssh -N -f shellfw; ssh -N -f dbfw; ssh -N -f nedry; ssh -N -f da'
 alias b2c_shell_c='ssh -N -f shellfw; ssh cms@dc'
 alias b2c_shell_r='ssh -N -f shellfw; ssh dc'
-
-alias one="cd ~ip/ses-one"
-alias two="ses"
-alias three="rs"
 
 alias be="bundle exec"
 alias bi="bundle install"
