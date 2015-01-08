@@ -4,12 +4,15 @@ ifeq ($(UNAME),Linux)
 	LSB := $(shell lsb_release -si)
 endif
 
-install: install-git install-vim install-zsh
+install: install-git install-vim install-zsh install-tmux
+
+install-tmux:
+	rm -rf ~/.tmux.conf
+	ln -s $(PWD)/tmux.conf ~/.tmux.conf
 
 install-vim:
-	rm -rf ~/.vim ~/.vimrc ~/.vimrc.local
+	rm -rf ~/.vim ~/.vimrc
 	ln -s $(PWD)/vim ~/.vim
-	ln -s $(PWD)/vimrc.local ~/.vimrc.local
 	ln -s ~/.vim/vimrc ~/.vimrc
 
 install-zsh:
@@ -28,7 +31,7 @@ endif
 endif
 
 ifeq ($(UNAME),Darwin)
-	ln -s $(PWD)/zshrc_mac ~/.zshrc
+	ln -s $(PWD)/zshrc ~/.zshrc
 endif
 
 install-git:
